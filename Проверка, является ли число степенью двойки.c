@@ -1,13 +1,23 @@
 #include <stdio.h>
 
-int main(void) {
-    unsigned int n;
+int main() {
+
+    int n;
+    
     printf("Введите целое число: ");
-    scanf("%u", &n);
+    scanf("%d", &n);
+
+    // Проверка что число положительное
+    int is_positive = (n > 0);          
     
-    // Число является степенью двойки, если n не ноль и (n & (n-1)) равно 0
-    int isPowerOfTwo = n && (!(n & (n - 1)));
+    // Проверка битового представления
+    int is_power_of_two = (n & (n - 1)) == 0; 
     
-    printf("Результат: %d\n", isPowerOfTwo);
+    // Общий результат
+    int result = is_positive && is_power_of_two; 
+
+    // Вывод результата (1 - степень двойки, 0 - нет)
+    printf("%d\n", result);
+
     return 0;
 }
