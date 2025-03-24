@@ -1,18 +1,15 @@
 #include <stdio.h>
 
-int main(void) {
-    int num;
+int main() {
+    int number;
+
     printf("Введите целое число: ");
-    scanf("%d", &num);
+    scanf("%d", &number);
     
-    // Используем оператор switch для проверки остатка от деления на 2
-    switch(num % 2) {
-        case 0:
-            printf("Число четное\n");
-            break;
-        default:
-            printf("Число нечетное\n");
-    }
+    //0 - нечётное, 1 - чётное
+    int is_even = (number % 2 == 0);
     
+    printf("%d\n", is_even);
+
     return 0;
 }
